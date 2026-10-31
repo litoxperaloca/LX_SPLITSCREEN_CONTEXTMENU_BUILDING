@@ -8,7 +8,7 @@ First public release on the Steam Workshop and GitHub.
 
 ### Changed in this version
 
-- All menu labels, group names and tooltips moved to translation files (EN/ES).
+- All menu labels, group names and tooltips moved to translation files (EN/ES/RU).
 - The menu and the available/total counters can be switched off in Options -> MODS.
 - Groups are keyed internally, so switching language no longer regroups the catalogue.
 
