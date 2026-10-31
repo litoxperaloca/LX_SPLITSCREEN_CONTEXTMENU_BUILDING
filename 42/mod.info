@@ -1,0 +1,9 @@
+name=LX Split-Screen Quick Build
+id=LX_SPLITSCREEN_CONTEXTMENU_BUILDING
+author=litoxperaloca
+description=Brings B41-style building back to the world context menu (right click or controller button), so you never have to open B42's build window - which is too wide and falls outside a split-screen viewport. Adds a "Quick build" submenu with walls, frames, doors, floors, fences and stairs in wood (Carpentry), metal (Metalworking) and brick/stone (Masonry), plus Furniture and Outdoors, grouped and sorted, each entry showing a tooltip with the skill, recipe, materials and tools it needs and what you are carrying. It uses the same BuildLogic and placement cursor as the vanilla window, so validation, material consumption and the build action are identical. The cursor stays active after each piece so you can keep building; B cancels. Works with mouse and controller. EN/ES.
+modversion=1.1.0
+versionMin=42.21
+poster=poster.png
+icon=icon.png
+url=https://github.com/litoxperaloca/LX_SPLITSCREEN_CONTEXTMENU_BUILDING
