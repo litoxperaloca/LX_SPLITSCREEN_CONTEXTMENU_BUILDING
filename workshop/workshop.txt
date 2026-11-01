@@ -1,5 +1,5 @@
 version=1
-id=
+id=3831322489
 title=LX Split-Screen Quick Build
 description=[h1]LX Split-Screen Quick Build[/h1]
 description=[i]B41-style building menu, because B42's window does not fit[/i]
