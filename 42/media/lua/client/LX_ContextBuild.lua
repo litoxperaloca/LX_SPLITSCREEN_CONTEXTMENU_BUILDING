@@ -318,12 +318,22 @@ if PZAPI and PZAPI.ModOptions then
     local tEnabled = o:addTickBox("ENABLED", getText("UI_LXCB_enable"), true, getText("UI_LXCB_enable_tip"))
     local tCounts = o:addTickBox("COUNTS", getText("UI_LXCB_counts"), true, getText("UI_LXCB_counts_tip"))
 
+    -- Greys the counters switch out while the menu is off.
+    local function setCountsEnabled(on)
+        if tCounts and tCounts.setEnabled then pcall(tCounts.setEnabled, tCounts, on == true) end
+    end
+
     o.apply = function(self)
         opt.enabled = tEnabled:getValue() == true
         opt.counts = tCounts:getValue() == true
-        if tCounts and tCounts.setEnabled then pcall(tCounts.setEnabled, tCounts, opt.enabled) end
+        setCountsEnabled(opt.enabled)
     end
-    tEnabled.onChange = function(self, value) o:apply() end
+
+    -- onChange runs on the click, BEFORE the options screen writes the new value into the
+    -- option (MainOptions does that in its own apply()), so getValue() would still hand back
+    -- the previous one here. Use the value we are given, and only touch the greying: the real
+    -- settings are read in apply(), which PZAPI calls right after committing every value.
+    tEnabled.onChange = function(self, value) setCountsEnabled(value) end
 
     -- PZAPI does not call apply() on load: force it on menu entry and on game start.
     Events.OnMainMenuEnter.Add(function() o:apply() end)
